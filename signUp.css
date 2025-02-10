@@ -5,6 +5,19 @@
     font-family: 'Arial', sans-serif;
 }
 
+.header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #04d939; /* White border */
+
+}
 body {
     display: flex;
     justify-content: center;
