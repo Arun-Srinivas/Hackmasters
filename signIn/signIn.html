@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signIn.css">
+
+
+</head>
+<body>
+    
+    <div class="header"><p style="color: #04d939;">GreenBites</p></div>
+    <div class="container">
+        <div class="form-container"style="background: #012340;">
+            <h2 style="color: #04d939; font-size:35px;">Welcome</h2>
+            <h2 style="color: #04d939; font-size:35px;">Back!</h2>
+
+            <br>
+            <form>
+                
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email" required>
+                <br>
+                <label for="password"></label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter Password" autocomplete="off" required>
+                    <i class="fa fa-eye-slash" id="togglePassword"></i>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+                </div>
+                <br><br>
+
+                    <button type="submit" class="submit-btn" style="color: white;">Login</button>
+                
+            </form>
+            <br>
+            <p class="footer-text" style="color: white;">Don't have an account? <a href="..//signUp/signUp.html" style="color: #04d939;">Sign Up</a></p>
+        </div>
+        
+        <div class="image-container">
+            <div class="overlay-content">
+                <br>
+                <img src="./backgroundbowl.png" alt="" height="450vh" width="400vw">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src= "signIn.js"></script>
+
+</body>
+</html>

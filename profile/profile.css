@@ -1,0 +1,224 @@
+
+       /* General Styles */
+body {
+    background-color: #012340;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #012340;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right, white, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #22c55e;
+    transform: scale(1.1);
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #22c55e;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+    background-color: #ffffff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Profile Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    
+    border: 1px solid #22c55e;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.readonly {
+    background-color: #f5f5f5;
+    color: #555;
+}
+
+/* Button */
+button {
+    width: 100%;
+    background-color: #22c55e;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #012340;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Notification */
+.message {
+    display: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #dff0d8;
+    color: #2d6a4f;
+}
+
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .form-group input {
+        padding: 8px;
+    }
+}
+body {
+    background-color: #012340;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #012340;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right, white, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #22c55e;
+    transform: scale(1.1);
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #22c55e;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+    background-color: #ffffff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Profile Container */
+.container {
+    max-width: 500px;
+    
+    margin: 50px auto;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    padding-left: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(54, 225, 97);
+    text-align: center;
+}
+    

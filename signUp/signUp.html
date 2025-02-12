@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signUp.css">
+
+</head>
+<body>
+    <div class="header"><p style="color: #04d939;">GreenBites</p></div>
+        <div class="container" style="background-image:url(./background.jpg)">
+        <div class="form-container"style="background: #012340;">
+            <br>
+            <h2 style="color: #04d939; font-size: 30px;">Create an account</h2>
+            <br><br>
+            <form>
+                <br><br>
+                <label for="fullname"></label>
+                <input type="text" id="fullname" placeholder="Full name" required>
+                <br>
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email" required>
+                <br>
+                <label for="password"></label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter Password" autocomplete="off" required>
+                    <i class="fa fa-eye-slash" id="togglePassword"></i>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+                </div>
+                <br>
+
+                    <button type="submit" class="submit-btn" style="color: white;">Sign Up</button>
+                           
+            </form>
+            <br>
+            
+            <p class="footer-text" style="color: white;">Have an account? <a href="..//signIn/signIn.html" style="color: #04d939;">Sign in</a></p>
+            
+        </div>
+        <div class="image-container">
+            <div class="overlay-content">
+                <br>
+                <img src="./loginImage.png" alt="" height="450vh" width="400vw">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="signUp.js" defer></script>
+</body>
+</html>

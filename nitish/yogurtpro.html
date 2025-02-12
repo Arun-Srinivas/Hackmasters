@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogurts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">GREEN BITE</h1>
+        <ul class="nav-links">
+            <li><a href="..//home/home.html">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="..//product/product.html">Products</a></li>
+            <li><a href="..//dealer/dealer.html">Dealer</a></li>
+            <li><a href="..//nitish/contact.html">Contact</a></li>
+        </ul>
+        <a href="..//home/home.html" class="back-btn">← Back to Home</a>
+    </nav>
+
+    <div class="container">
+        <section class="product-details">
+            <div class="product-image">
+                <img src="..//product/images/Yogurt.png" alt="Yogurts">
+            </div>
+        </section>
+        <div class="product-info">
+            <h1>Yogurts</h1>
+            <p>Net Qty: 1Kg</p>
+            <p class="price">₹700 <span class="discount">(20% Off)</span></p>
+            <p class="mrp">MRP: ₹900 (incl. of all taxes)</p>
+            <button class="" id="buyNowBtn" style="box-shadow: #000;
+                background-color: #012340;
+                color: #ffffff; background-color: #22c55e;
+                color: black;padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                text-align: center;
+                        ">Buy Now</button>
+            <button class="order-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Supabase client
+        const supabaseClient = supabase.createClient(
+            'https://osovrtrhscypfwwyqhrq.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9zb3ZydHJoc2N5cGZ3d3lxaHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkxNzg2NjUsImV4cCI6MjA1NDc1NDY2NX0.KlmPgisE1dzPpBN_DARadjUw0BV1FhLkOBIPFcqQx_I'
+        );
+
+        document.getElementById('buyNowBtn').addEventListener('click', async () => {
+            try {
+                // Get current user
+                const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
+                if (userError || !user) {
+                    alert("User not logged in!");
+                    return;
+                }
+
+                // Get user's address from the profiles table
+                const { data: profile, error: profileError } = await supabaseClient
+                    .from('profiles')
+                    .select('address')
+                    .eq('user_id', user.id)
+                    .single();
+
+                if (profileError) {
+                    alert("Failed to fetch address!");
+                    return;
+                }
+
+                const address = profile.address;
+                const item = "Yogurts";
+
+                // Insert order into orders table
+                const { error: orderError } = await supabaseClient
+                    .from('orders')
+                    .insert([{ 
+                        email: user.email,
+                        item: item,
+                        address: address,
+                        order_date: new Date().toISOString()
+                    }]);
+
+                if (orderError) {
+                    alert("Error placing order: " + orderError.message);
+                    return;
+                }
+
+                // Show success message
+                alert("Order Placed Successfully!");
+            } catch (error) {
+                alert("An error occurred: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

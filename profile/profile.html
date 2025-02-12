@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* General Styles */
+ body {
+     background-color: #012340;
+     color: white;
+     font-family: 'Arial', sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ /* Navbar */
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 40px;
+     background-color: #012340;
+ }
+ 
+ .logo {
+     font-size: 24px;
+     font-weight: bold;
+     background: linear-gradient(to right, white, #22c55e);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+ 
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
+ 
+ .nav-links li a {
+     color: white;
+     text-decoration: none;
+     padding: 10px;
+     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+ }
+ 
+ .nav-links li a:hover {
+     color: #22c55e;
+     transform: scale(1.1);
+ }
+ 
+ .back-btn {
+     color: white;
+     text-decoration: none;
+     font-size: 16px;
+     padding: 10px 15px;
+     border-radius: 5px;
+     background-color: #22c55e;
+     font-weight: bold;
+     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+ }
+ 
+ .back-btn:hover {
+     background-color: #ffffff;
+     color: black;
+     transform: scale(1.05);
+ }
+ 
+ /* Profile Container */
+ .container {
+     max-width: 500px;
+     margin: 50px auto;
+     background-color: white;
+     color: black;
+     padding: 25px;
+     border-radius: 10px;
+     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+     text-align: center;
+ }
+ 
+ /* Form Styling */
+ .form-group {
+     margin-bottom: 15px;
+     text-align: left;
+ }
+ 
+ .form-group label {
+     display: block;
+     font-weight: bold;
+     margin-bottom: 5px;
+ }
+ 
+ .form-group input {
+     width: 100%;
+     padding: 10px;
+     
+     border: 1px solid #22c55e;
+     border-radius: 5px;
+     font-size: 14px;
+ }
+ 
+ .readonly {
+     background-color: #f5f5f5;
+     color: #555;
+ }
+ 
+ /* Button */
+ button {
+     width: 100%;
+     background-color: #22c55e;
+     color: black;
+     padding: 10px;
+     border: none;
+     border-radius: 5px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+ }
+ 
+ button:hover {
+     background-color: #012340;
+     color: white;
+     transform: scale(1.05);
+ }
+ 
+ /* Notification */
+ .message {
+     display: none;
+     padding: 10px;
+     margin-top: 15px;
+     border-radius: 5px;
+     text-align: center;
+     font-weight: bold;
+ }
+ 
+ .success {
+     background-color: #dff0d8;
+     color: #2d6a4f;
+ }
+ 
+ .error {
+     background-color: #f2dede;
+     color: #a94442;
+ }
+ 
+ /* Mobile Responsive */
+ @media (max-width: 600px) {
+     .container {
+         width: 90%;
+         padding: 15px;
+     }
+ 
+     .form-group input {
+         padding: 8px;
+     }
+ }
+ body {
+     background-color: #012340;
+     color: white;
+     font-family: 'Arial', sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ /* Navbar */
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 40px;
+     background-color: #012340;
+ }
+ 
+ .logo {
+     font-size: 24px;
+     font-weight: bold;
+     background: linear-gradient(to right, white, #22c55e);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+ 
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
+ 
+ .nav-links li a {
+     color: white;
+     text-decoration: none;
+     padding: 10px;
+     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+ }
+ 
+ .nav-links li a:hover {
+     color: #22c55e;
+     transform: scale(1.1);
+ }
+ 
+ .back-btn {
+     color: white;
+     text-decoration: none;
+     font-size: 16px;
+     padding: 10px 15px;
+     border-radius: 5px;
+     background-color: #22c55e;
+     font-weight: bold;
+     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+ }
+ 
+ .back-btn:hover {
+     background-color: #ffffff;
+     color: black;
+     transform: scale(1.05);
+ }
+ 
+ /* Profile Container */
+ .container {
+     max-width: 500px;
+     
+     margin: 50px auto;
+     background-color: white;
+     color: black;
+     padding: 25px;
+     padding-left: 25px;
+     border-radius: 10px;
+     box-shadow: 0px 4px 15px rgba(54, 225, 97);
+     text-align: center;
+ }
+     </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">GREEN BITE</h1>
+        <ul class="nav-links">
+            <li><a href="../home/home.html">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="../product/product.html">Products</a></li>
+            <li><a href="../dealer/dealer.html">Dealer</a></li>
+            <li><a href="../nitish/contact.html">Contact</a></li>
+        </ul>
+        <a href="../home/home.html" class="back-btn">&#8592; Back to Home</a>
+    </nav>
+    <div class="container">
+        <h1>User Profile</h1>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" readonly class="readonly">
+            </div>
+            <div class="form-group">
+                <label for="displayName">Display Name</label>
+                <input type="text" id="displayName" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+            </div>
+            <button type="submit">Update Profile</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <!-- Load Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const supabaseClient = supabase.createClient(
+                'https://osovrtrhscypfwwyqhrq.supabase.co',
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9zb3ZydHJoc2N5cGZ3d3lxaHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkxNzg2NjUsImV4cCI6MjA1NDc1NDY2NX0.KlmPgisE1dzPpBN_DARadjUw0BV1FhLkOBIPFcqQx_I'
+            );
+
+            const form = document.getElementById('profileForm');
+            const emailInput = document.getElementById('email');
+            const displayNameInput = document.getElementById('displayName');
+            const phoneInput = document.getElementById('phone');
+            const addressInput = document.getElementById('address');
+            const messageDiv = document.getElementById('message');
+
+            function showMessage(message, isError = false) {
+                messageDiv.textContent = message;
+                messageDiv.className = `message ${isError ? 'error' : 'success'}`;
+            }
+
+            async function loadUserData() {
+                try {
+                    const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
+                    if (userError) throw userError;
+                    emailInput.value = user.email;
+
+                    const { data: profile, error: profileError } = await supabaseClient
+                        .from('profiles')
+                        .select('display_name, phone, address')
+                        .eq('user_id', user.id)
+                        .single();
+
+                    if (profileError && profileError.code !== 'PGRST116') {
+                        throw profileError;
+                    }
+
+                    if (profile) {
+                        displayNameInput.value = profile.display_name || '';
+                        phoneInput.value = profile.phone || '';
+                        addressInput.value = profile.address || '';
+                    }
+                } catch (error) {
+                    showMessage('Error loading profile: ' + error.message, true);
+                }
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                try {
+                    const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
+                    if (userError) throw userError;
+
+                    const { error: updateError } = await supabaseClient
+                        .from('profiles')
+                        .upsert({
+                            user_id: user.id,
+                            display_name: displayNameInput.value,
+                            phone: phoneInput.value,
+                            address: addressInput.value,
+                            updated_at: new Date().toISOString()
+                        }, { onConflict: 'user_id' });
+
+                    if (updateError) throw updateError;
+
+                    showMessage('Profile updated successfully!');
+                } catch (error) {
+                    showMessage('Error updating profile: ' + error.message, true);
+                }
+            });
+
+            loadUserData();
+        });
+    </script>
+</body>
+</html>

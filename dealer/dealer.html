@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- editted 3 final -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Bite - Organic Foods</title>
+    <link rel="icon" type="image/png" href="..//nitish/assets/honey.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #012340;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #012340;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            gap: 10px;
+            background: linear-gradient(to right, white, #04d939);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo-img {
+            width: 40px;
+            height: auto;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .nav-links li a:hover {
+            color: #04d939;
+            transform: scale(1.1);
+        }
+        .login-btn {
+            background-color: #04d939;
+            padding: 10px 20px;
+            margin-right: 50px;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .container {
+            width: 50%;
+            margin-top: 150px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(11, 231, 22, 0.8);
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #04d939;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .submit-btn:hover {
+            background-color: #03b52b;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">
+            <img src="..//product/images/logo.png" alt="Green Bite Logo" class="logo-img"> GREEN BITE
+        </h1>
+        <ul class="nav-links">
+            <li><a href="..//home/home.html">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="..//product/product.html">Products</a></li>
+            <li><a href="..//dealer/dealer.html" style="color: #04d939;">Dealer</a></li>
+            <li><a href="..//nitish/contact.html">Contact</a></li>
+        </ul>
+        <button class="login-btn">Log in</button>
+    </nav>
+    <div class="container">
+        <h2><span style="color:#04d939">Dealer</span> Product Submission</h2>
+        <form id="productForm">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" placeholder="Enter product name" required>
+            </div>
+            <div class="form-group">
+                <label for="productDesc">Product Description</label>
+                <textarea id="productDesc" placeholder="Enter product description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Price ($)</label>
+                <input type="number" id="productPrice" placeholder="Enter price" required>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image</label>
+                <input type="file" id="productImage" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit Product</button>
+           
+            <div class="popup" id="popupMessage">Product has been submitted successfully!</div>
+            <script>
+                document.getElementById("productForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    document.getElementById("popupMessage").style.display = "block";
+                    setTimeout(function() {
+                        document.getElementById("popupMessage").style.display = "none";
+                    }, 2000);
+                    this.reset();
+                });
+            </script>
+            
+        </form>
+    </div>
+</body>
+</html>
